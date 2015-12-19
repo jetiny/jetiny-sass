@@ -105,10 +105,126 @@ input.input.success+i+input.input.error+i+input.input.input-hover+i+input.input.
 	<div class="demo-group">
 		<div class="info">描述</div>
 		<pre class="code">
-.demo-group>div.info{描述}+pre.code{代码}+div.view{行}
+button.btn.btn-default{default}+i+button.btn.btn-default[disabled]{disabled}+i
+button.btn.btn-default.font-sm{default}+i+button.btn.btn-default.font-lg{default}+i
+button.btn.btn-default.pad-sm{default}+i+button.btn.btn-default.pad-lg{default}+i
+button.btn.btn-default.font-sm.pad-sm{default}+i+button.btn.btn-default.font-lg.pad-lg{default}+i
 		</pre>
 		<div class="view">
+<button class="btn btn-default">default</button>
+<i></i>
+<button class="btn btn-default" disabled="">disabled</button>
+<i></i>
+<button class="btn btn-default font-sm">default</button>
+<i></i>
+<button class="btn btn-default font-lg">default</button>
+<i></i>
+<button class="btn btn-default pad-sm">default</button>
+<i></i>
+<button class="btn btn-default pad-lg">default</button>
+<i></i>
+<button class="btn btn-default font-sm pad-sm">default</button>
+<i></i>
+<button class="btn btn-default font-lg pad-lg">default</button>
+<i></i>
+
 		</div>
 	</div>
+	<div class="demo-group">
+		<div class="info">描述</div>
+		<pre class="code">
+ul.list[style='width:150px']>li{list-item-$}*10+li.active{active}+li{list-item-1$}*3
+		</pre>
+		<div class="view">
+<ul class="list" style="width:150px">
+	<li>list-item-1</li>
+	<li>list-item-2</li>
+	<li>list-item-3</li>
+	<li>list-item-4</li>
+	<li>list-item-5</li>
+	<li>list-item-6</li>
+	<li>list-item-7</li>
+	<li>list-item-8</li>
+	<li>list-item-9</li>
+	<li>list-item-10</li>
+	<li class="active">active</li>
+	<li>list-item-11</li>
+	<li>list-item-12</li>
+	<li>list-item-13</li>
+</ul>
+		</div>
+	</div>
+	<div class="demo-group">
+		<div class="info">描述</div>
+		<pre class="code">
+.popup[data-fn-clickout]>span[data-popup-toggle]{popup}+.pop-box{poup}
+		</pre>
+		<div class="view">
+<div class="popup popup-inline" data-fn-clickout="">
+	<button class="btn btn-default" data-popup-toggle="">popup</button>
+	<div class="pop-box">poup</div>
+</div>
+		</div>
+	</div>
+	<div class="demo-group">
+		<div class="info">描述</div>
+		<pre class="code">
+.popup.popinput.popup-inline[data-fn-clickout]>input.input+.pop-box>ul.list>li{list-item-$}*10
+.popup.popselect.popup-inline[data-fn-clickout]>input.input.pop-edit[data-popup-toggle]+.input.popup-item>span{select}^+.pop-box>ul.list>li{list-item-$}*10
+		</pre>
+		<div class="view">
+<div class="popup popinput popup-inline" data-fn-clickout="">
+	<input type="text" class="input">
+	<div class="pop-box">
+		<ul class="list">
+			<li>list-item-1</li>
+			<li>list-item-2</li>
+			<li>list-item-3</li>
+			<li>list-item-4</li>
+			<li>list-item-5</li>
+			<li>list-item-6</li>
+			<li>list-item-7</li>
+			<li>list-item-8</li>
+			<li>list-item-9</li>
+			<li>list-item-10</li>
+		</ul>
+	</div>
+</div>
+<div class="popup popselect popup-inline" data-fn-clickout="">
+	<input type="text" class="input pop-edit" data-popup-toggle="">
+	<div class="input popup-item"><span>select</span></div>
+	<div class="pop-box">
+		<ul class="list">
+			<li>list-item-1</li>
+			<li>list-item-2</li>
+			<li>list-item-3</li>
+			<li>list-item-4</li>
+			<li>list-item-5</li>
+			<li>list-item-6</li>
+			<li>list-item-7</li>
+			<li>list-item-8</li>
+			<li>list-item-9</li>
+			<li>list-item-10</li>
+		</ul>
+	</div>
+</div>
+
+		</div>
+	</div>
+	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="../js/clickout.js"></script>
+	<script type="text/javascript" src="../js/popup.js"></script>
+	<script type="text/javascript">
+		$(document)
+			.on('mousedown', '.popinput .list>li', function () {
+				$(this).closest('.popinput').find('.input').eq(0).val($(this).text());
+			})
+			.on('click', '.popselect .list>li', function () {
+				var $pop = $(this).closest('.popselect');
+				$pop.find('.popup-item >span').text($(this).text());
+				$pop.removeClass('open');
+			})
+			;
+	</script>
 </body>
 </html>

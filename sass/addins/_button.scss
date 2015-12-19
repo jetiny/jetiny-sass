@@ -1,0 +1,25 @@
+@if $button-on {
+    // div>button.btn.btn-default{default}+button.btn.btn-default.disabled{default disabled}+i
+    // div>button.btn.btn-default.font-sm{default Small}+button.btn.btn-default.font-lg{default large}+i
+    // div>button.btn.btn-primary{primary}+button.btn.btn-primary.disabled{primary disabled}+i
+    // div>button.btn.btn-primary.font-sm{primary Small}+button.btn.btn-primary.font-lg{primary large}+i
+    .btn {
+        @include make-button;
+
+        @if $button-border-width {
+            border-width: $button-border-width;
+        }
+
+        @include make-font-size-default;
+
+        @include make-pad-default;
+    }
+
+    .btn-default {
+        @include make-button-variant($button-default-text-color, $button-default-bg-color, $button-default-bd-color);
+    }
+
+    .btn-primary {
+        @include make-button-variant($button-primary-text-color, $button-primary-bg-color, $button-primary-bd-color);
+    }
+}

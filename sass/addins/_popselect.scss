@@ -4,10 +4,6 @@
 @if $popselect-on {
     /*---@POPSELECT---*/
     .popselect {
-        .input {
-            line-height: 16px;
-        }
-
         .pop-edit {
             @include opacity(0);
 
@@ -20,6 +16,7 @@
         }
 
         .popup-item {
+            box-sizing: border-box;
             position: absolute;
             top: 0;
             width: 100%;
