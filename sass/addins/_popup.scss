@@ -1,0 +1,30 @@
+@import "popup_vars";
+@import "popup_mix";
+
+@if $popup-on {
+    /*---@POPUP---*/
+    .popup {
+        @include make-popup;
+
+        &.popup-inline {
+            display: inline-block;
+        }
+
+        .pop-box {
+            @include make-pop-box;
+
+            &.pop-right {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        &.open {
+            .pop-box {
+                display: block;
+            }
+        }
+    }
+
+    /*---@POPUP---*/
+}

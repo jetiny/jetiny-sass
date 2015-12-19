@@ -1,0 +1,22 @@
+@import "list_vars";
+@import "list_mix";
+
+@if $list-on {
+    /*---@LIST---*/
+    .list {
+        @include make-list;
+
+        background-color: $list-bg-color;
+        border: 1px solid $list-bd-color;
+
+        > li {
+            @include make-list-item;
+
+            &.divider {
+                @include make-list-divider;
+            }
+        }
+    }
+
+    /*---@LIST---*/
+}

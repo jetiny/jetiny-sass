@@ -1,0 +1,25 @@
+@import "popinput_vars";
+@import "popinput_mix";
+
+@if $popinput-on {
+    /*---@POPINPUT---*/
+    .popinput {
+        .pop-box {
+            min-width: 100%;
+            max-width: 200%;
+
+            > .list {
+                padding: 0;
+                margin-top: -1px;
+                max-height: 300px;
+                overflow-y: auto;
+
+                .list-text {
+                    @include ellipsis;
+                }
+            }
+        }
+    }
+
+    /*---@POPINPUT---*/
+}

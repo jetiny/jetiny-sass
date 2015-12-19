@@ -1,0 +1,33 @@
+{
+  "name": "jetiny-sass",
+  "version": "0.0.1",
+  "description": "jetiny ui components based on sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jetiny:86287344xxx@github.com/jetiny/jetiny-sass.git"
+  },
+  "keywords": [
+    "jetiny",
+    "ui",
+    "css",
+    "sass",
+    "component",
+    "addins",
+    "fondation"
+  ],
+  "author": "jetiny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jetiny/jetiny-sass/issues"
+  },
+  "homepage": "https://github.com/jetiny/jetiny-sass#readme",
+  "devDependencies": {
+    "bourbon": "^4.2.6",
+    "normalize-scss": "^4.0.3",
+    "support-for": "^1.0.3"
+  }
+}

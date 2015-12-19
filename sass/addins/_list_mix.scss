@@ -1,0 +1,62 @@
+@mixin make-list() {
+	padding: 5px 0;
+	margin: 2px 0 0; // override default ul
+	list-style: none;
+	background-clip: padding-box;
+}
+
+@mixin make-list-divider() {
+  height: 1px;
+  margin: 9px 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+@mixin make-list-item() {
+  cursor: pointer;
+  display: block;
+  width: 100%; // For `<button>`s
+  padding: 3px 10px;
+  clear: both;
+  font-weight: normal;
+  text-align: inherit; // For `<button>`s
+  white-space: nowrap; // prevent links from randomly breaking onto new lines
+  
+  // word-break: break-all; //自动换行
+  // white-space: normal; //自动换行
+  
+  background: none; // For `<button>`s
+  border: 0; // For `<button>`s
+
+  @include hover-focus {
+    text-decoration: none;
+    background-color: $list-link-hover-bg-color;
+  }
+
+  // Active state
+  &.active {
+    @include plain-hover-focus {
+      text-decoration: none;
+      background-color: $list-link-active-bg-color;
+      outline: 0;
+    }
+  }
+
+  // Disabled state
+  //
+  // Gray out text and ensure the hover/focus state remains gray
+  &.disabled {
+    @include plain-hover-focus {
+      color: $list-link-disabled-color;
+    }
+    // Nuke hover/focus effects
+    @include hover-focus {
+      text-decoration: none;
+      cursor: default;
+      background-color: transparent;
+      background-image: none; // Remove CSS gradient
+    }
+  }
+}
+

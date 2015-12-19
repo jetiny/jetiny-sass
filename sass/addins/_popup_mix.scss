@@ -1,0 +1,16 @@
+
+@mixin make-popup() {
+    position: relative;
+}
+
+@mixin make-pop-box (
+	$z-index: $popup-z-index
+) {
+    position: absolute;
+    display: none;
+    z-index: $z-index;
+    cursor: default;
+    top: 100%;
+    left: 0;
+    @include user-select(initial);  // 如果内嵌到按钮中，则需要重置
+}

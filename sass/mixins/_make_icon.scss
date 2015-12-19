@@ -1,0 +1,23 @@
+
+@mixin make-icon-right($color : #10BD80) { // 对号
+    border: 2px solid transparent;
+    border-left-color: $color;
+    border-bottom-color: $color;
+    position: absolute;
+    width: 14px;
+    height: 8px;
+    border-top-left-radius: 0;
+    right: 8px;
+    top: 25%;
+    content: '';
+    @include transform (rotate(-50deg))	;
+}
+
+@mixin make-icon-caret($color: #B3A9A9) { // 下三角
+    border: 6px solid transparent;
+    border-top-color: $color;
+    position: absolute;
+    right: 8px;
+    top: 40%;
+    content: '';
+}

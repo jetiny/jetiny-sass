@@ -1,0 +1,60 @@
+// 可访问的input
+$input-access-able : ":not(:focus):not(:hover):not([disabled])" !default; 
+
+// input Default
+@mixin make-input() {
+	border: 0px solid;              // 去除 input的默认边框样式 + 去除 Border宽度
+  vertical-align: middle;         // 用来对齐
+  outline: none;                  // 去除默认的outline样式
+
+  & [disabled] {
+    cursor: default;
+    box-shadow: none;
+    opacity: .65;
+    filter: alpha(opacity=65);
+  }
+}
+
+// input sizes
+@mixin  make-input-size($padding-vertical, $padding-horizontal: false, $font-size : false, $line-height : false, $border-radius : false) {
+  @if $padding-horizontal {
+    padding: $padding-vertical $padding-horizontal; //两端对齐
+  } @else {
+    padding: $padding-vertical;	//两端对齐
+  }
+  @if $font-size {//字体
+    font-size: $font-size;              
+  }
+  @if $line-height { //由于input和select默认高度不一致，所以需要强制修改行高
+    line-height: $line-height;
+  }
+  @if $border-radius {
+    border-radius: $border-radius;
+  }
+}
+
+// input variants
+@mixin  make-input-variant($color, $background, $border: false) {
+  color: $color;
+  background-color: $background;
+  @if ($border) {
+    border-color: $border;
+  }
+
+  &:focus,
+  &:hover,
+  &.focus {
+    color: $color;
+    // background-color: darken($background, 5%);
+    @if ($border) {
+        border-color: darken($border, 30%);
+    }
+  }
+  
+  &[disabled] {
+    background-color: darken($background, 5%);
+    @if ($border) {
+        border-color: $border;
+    }
+  }
+}

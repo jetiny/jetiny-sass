@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../dist/css/simples.css">
+</head>
+<body>
+	<div class="demo-group">
+		<div class="info">描述</div>
+		<pre class="code">
+.demo-group>div.info{描述}+pre.code{代码}+div.view{行}
+		</pre>
+		<div class="view">
+		</div>
+	</div>
+	<div class="demo-group">
+		<div class="info">描述</div>
+		<pre class="code">
+input.input.font-sm[value=input]+i+select.input.font-sm>option{select}^+i
+input.input[value=input]+i+select.input>option{select}^+i
+input.input.font-lg[value=input]+i+select.input.font-lg>option{select}^+i
+
+input.input.font-sm.pad-sm[value=input]+i+select.input.font-sm.pad-sm>option{select}^+i
+input.input.pad-sm[value=input]+i+select.input.pad-sm>option{select}^+i
+input.input.font-lg.pad-sm[value=input]+i+select.input.font-lg.pad-sm>option{select}^+i
+
+input.input.font-sm.pad-lg[value=input]+i+select.input.font-sm.pad-lg>option{select}^+i
+input.input.pad-lg[value=input]+i+select.input.pad-lg>option{select}^+i
+input.input.font-lg.pad-lg[value=input]+i+select.input.font-lg.pad-lg>option{select}^+i
+
+input.input.success+i+input.input.error+i+input.input.input-hover+i+input.input.success.error.input-hover[disabled]+i+
+		</pre>
+		<div class="view">
+<input type="text" class="input font-sm" value="input">
+<i></i>
+<select name="" id="" class="input font-sm">
+	<option value="">select</option>
+</select>
+<i></i>
+<input type="text" class="input" value="input">
+<i></i>
+<select name="" id="" class="input">
+	<option value="">select</option>
+</select>
+<i></i>
+<input type="text" class="input font-lg" value="input">
+<i></i>
+<select name="" id="" class="input font-lg">
+	<option value="">select</option>
+</select>
+<i></i>
+<br>
+<br>
+<input type="text" class="input font-sm pad-sm" value="input">
+<i></i>
+<select name="" id="" class="input font-sm pad-sm">
+	<option value="">select</option>
+</select>
+<i></i>
+<input type="text" class="input pad-sm" value="input">
+<i></i>
+<select name="" id="" class="input pad-sm">
+	<option value="">select</option>
+</select>
+<i></i>
+<input type="text" class="input font-lg pad-sm" value="input">
+<i></i>
+<select name="" id="" class="input font-lg pad-sm">
+	<option value="">select</option>
+</select>
+<i></i>
+<br>
+<br>
+<input type="text" class="input font-sm pad-lg" value="input">
+<i></i>
+<select name="" id="" class="input font-sm pad-lg">
+	<option value="">select</option>
+</select>
+<i></i>
+<input type="text" class="input pad-lg" value="input">
+<i></i>
+<select name="" id="" class="input pad-lg">
+	<option value="">select</option>
+</select>
+<i></i>
+<input type="text" class="input font-lg pad-lg" value="input">
+<i></i>
+<select name="" id="" class="input font-lg pad-lg">
+	<option value="">select</option>
+</select>
+<i></i>
+<br>
+<br>
+<input type="text" class="input success">
+<i></i>
+<input type="text" class="input error">
+<i></i>
+<input type="text" class="input input-hover">
+<i></i>
+<input type="text" class="input success error input-hover" disabled="">
+<i+></i+>
+		</div>
+	</div>
+	<div class="demo-group">
+		<div class="info">描述</div>
+		<pre class="code">
+.demo-group>div.info{描述}+pre.code{代码}+div.view{行}
+		</pre>
+		<div class="view">
+		</div>
+	</div>
+</body>
+</html>

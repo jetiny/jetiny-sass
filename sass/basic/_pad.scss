@@ -1,0 +1,16 @@
+@if $pad-on {
+    /*---@PAD---*/
+    .pad-default {
+        @include make-pad-default;
+    }
+
+    .pad-sm {
+        @include make-pad-sm;
+    }
+
+    .pad-lg {
+        @include make-pad-lg;
+    }
+
+    /*---@PAD---*/
+}

@@ -1,0 +1,11 @@
+@mixin make-pad-default($padding: $pad-padding-default) {
+    padding: $padding;
+}
+
+@mixin make-pad-sm($padding: $pad-padding-sm) {
+    @include make-pad-default($padding);
+}
+
+@mixin make-pad-lg($padding: $pad-padding-lg) {
+    @include make-pad-default($padding);
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../dist/css/simples.css">
+</head>
+<body>
+	<div class="demo-group">
+		<div class="info">描述</div>
+		<pre class="code">div.demo-group>div.info{描述}+pre.code{代码}+div.view{行}</pre>
+		<div class="view">行</div>
+	</div>
+	<div class="demo-group">
+		<div class="info">输入框基本样式 .input</div>
+		<pre class="code">
+div.view>input.input.font-sm+select.input.font-sm>(option[value=$]{option$}*3)^+i+input.input+select.input>(option[value=$]{option$}*3)^+i+input.input.font-lg+select.input.font-lg>(option[value=$]{option$}*3)^+i+
+		</pre>
+<div class="view">
+	<input type="text" class="input font-sm">
+	<select name="" id="" class="input font-sm">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<input type="text" class="input">
+	<select name="" id="" class="input">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<input type="text" class="input font-lg">
+	<select name="" id="" class="input font-lg">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i+></i+>
+</div>
+	</div>
+
+	<div class="demo-group">
+		<div class="info">输入框基本样式 .input</div>
+		<pre class="code">
+div.view>input.input+i+input.input[placeHolder="place-holder"]+i+input.input[disabled value=disabled]+i+input.input.success[value=success]+i+input.input.error[value=error]+i+input.input.error.success[disabled value=disabled]
+div.view>input.input.font-sm+i+input.input.font-sm[placeHolder="place-holder"]+i+input.input.font-sm[disabled value=disabled]+i
+div.view>input.input.font-lg+i+input.input.font-lg[placeHolder="place-holder"]+i+input.input.font-lg[disabled value=disabled]+i
+		</pre>
+<div class="view">
+	<input type="text" class="input">
+	<i></i>
+	<input type="text" class="input" placeHolder="place-holder">
+	<i></i>
+	<input type="text" class="input" disabled="" value="disabled">
+	<i></i>
+	<input type="text" class="input success" value="success">
+	<i></i>
+	<input type="text" class="input error" value="error">
+	<i></i>
+	<input type="text" class="input error success" disabled="" value="disabled">
+</div>
+
+<div class="view">
+	<input type="text" class="input font-sm">
+	<i></i>
+	<input type="text" class="input font-sm" placeHolder="place-holder">
+	<i></i>
+	<input type="text" class="input font-sm" disabled="" value="disabled">
+	<i></i>
+</div>
+<div class="view">
+	<input type="text" class="input font-lg">
+	<i></i>
+	<input type="text" class="input font-lg" placeHolder="place-holder">
+	<i></i>
+	<input type="text" class="input font-lg" disabled="" value="disabled">
+	<i></i>
+</div>
+	</div>
+	
+	<div class="demo-group">
+		<div class="info">选择框基本样式 .input</div>
+		<pre class="code">
+div.view>select.input>(option[value=$]{option$}*3)^+i+select.input[disabled value=disabled]>(option[value=$]{option$}*3)^+i+select.input.success>(option[value=$]{option$}*3)^+i+select.input.error>(option[value=$]{option$}*3)^+i+select.input.error.success[disabled value=disabled]>(option[value=$]{option$}*3)^+i
+div.view>select.input.font-sm>(option[value=$]{option$}*3)^+i+select.input.font-sm[disabled value=disabled]>(option[value=$]{option$}*3)^+i
+div.view>select.input.font-lg>(option[value=$]{option$}*3)^+i+select.input[disabled value=disabled].font-lg>(option[value=$]{option$}*3)^+i
+		</pre>
+<div class="view">
+	<select name="" id="" class="input">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input" disabled="" value="disabled">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input success">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input error">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input error success" disabled="" value="disabled">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+</div>
+<div class="view">
+	<select name="" id="" class="input font-sm">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input font-sm" disabled="" value="disabled">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+</div>
+<div class="view">
+	<select name="" id="" class="input font-lg">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input font-lg" disabled="" value="disabled">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+</div>
+	</div>
+
+	<div class="demo-group">
+		<div class="info">输入框高亮样式 .input.input-hover</div>
+		<pre class="code">
+div.view>input.input.input-hover+i+input.input.input-hover[placeHolder="place-holder"]+i+input.input.input-hover[disabled value=disabled]+i+input.input.input-hover.success[value=success]+i+input.input.input-hover.error[value=error]+i+input.input.input-hover.error.success[disabled value=disabled]+i
+div.view>input.input.input-hover.font-sm+i+input.input.input-hover.font-sm[placeHolder="place-holder"]+i+input.input.input-hover.font-sm[disabled value=disabled]+i
+div.view>input.input.input-hover.font-lg+i+input.input.input-hover.font-lg[placeHolder="place-holder"]+i+input.input.input-hover.font-lg[disabled value=disabled]+i
+		</pre>
+<div class="view">
+	<input type="text" class="input input-hover">
+	<i></i>
+	<input type="text" class="input input-hover" placeHolder="place-holder">
+	<i></i>
+	<input type="text" class="input input-hover" disabled="" value="disabled">
+	<i></i>
+	<input type="text" class="input input-hover success" value="success">
+	<i></i>
+	<input type="text" class="input input-hover error" value="error">
+	<i></i>
+	<input type="text" class="input input-hover error success" disabled="" value="disabled">
+	<i></i>
+</div>
+<div class="view">
+	<input type="text" class="input input-hover font-sm">
+	<i></i>
+	<input type="text" class="input input-hover font-sm" placeHolder="place-holder">
+	<i></i>
+	<input type="text" class="input input-hover font-sm" disabled="" value="disabled">
+	<i></i>
+</div>
+<div class="view">
+	<input type="text" class="input input-hover font-lg">
+	<i></i>
+	<input type="text" class="input input-hover font-lg" placeHolder="place-holder">
+	<i></i>
+	<input type="text" class="input input-hover font-lg" disabled="" value="disabled">
+	<i></i>
+</div>
+	</div>
+
+	<div class="demo-group">
+		<div class="info">选择框高亮样式 .input.input-hover</div>
+		<pre class="code">
+div.view>select.input.input-hover>(option[value=$]{option$}*3)^+i+select.input.input-hover[disabled value=disabled]>(option[value=$]{option$}*3)^+i+select.input.input-hover.success>(option[value=$]{option$}*3)^+i+select.input.input-hover.error>(option[value=$]{option$}*3)^+i+select.input.input-hover.error.success[disabled value=disabled]>(option[value=$]{option$}*3)^+i
+div.view>select.input.input-hover.font-sm>(option[value=$]{option$}*3)^+i+select.input.input-hover.font-sm[disabled value=disabled]>(option[value=$]{option$}*3)^+i
+div.view>select.input.input-hover.font-lg>(option[value=$]{option$}*3)^+i+select.input.input-hover[disabled value=disabled].font-lg>(option[value=$]{option$}*3)^+i
+		</pre>
+<div class="view">
+	<select name="" id="" class="input input-hover">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input input-hover" disabled="" value="disabled">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input input-hover success">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input input-hover error">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input input-hover error success" disabled="" value="disabled">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+</div>
+<div class="view">
+	<select name="" id="" class="input input-hover font-sm">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input input-hover font-sm" disabled="" value="disabled">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+</div>
+<div class="view">
+	<select name="" id="" class="input input-hover font-lg">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+	<select name="" id="" class="input input-hover font-lg" disabled="" value="disabled">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+	</select>
+	<i></i>
+</div>
+	</div>
+
+</body>
+</html>
