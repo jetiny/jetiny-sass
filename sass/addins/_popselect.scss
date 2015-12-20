@@ -70,10 +70,15 @@
                 .popup-label {
                     position: absolute;
                     right: 26px;
-                    top: 3px;
                     background-color: #EEEEEE;
-                    padding: 3px 8px;
+                    padding: .1em .5em;
                     border-radius: 3px;
+                    top: 50%;
+                    margin-top: -.65em;
+
+                    &:empty {
+                        display: none;
+                    }
                 }
             }
         }

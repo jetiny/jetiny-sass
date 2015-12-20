@@ -1,5 +1,6 @@
 
 @mixin make-icon-right($color : #10BD80) { // 对号
+    box-sizing: border-box;
     border: 2px solid transparent;
     border-left-color: $color;
     border-bottom-color: $color;
@@ -14,6 +15,7 @@
 }
 
 @mixin make-icon-caret($color: #B3A9A9) { // 下三角
+    box-sizing: border-box;
     border: 6px solid transparent;
     border-top-color: $color;
     position: absolute;

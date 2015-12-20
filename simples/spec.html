@@ -171,6 +171,9 @@ ul.list[style='width:150px']>li{list-item-$}*10+li.active{active}+li{list-item-1
 		<pre class="code">
 .popup.popinput.popup-inline[data-fn-clickout]>input.input+.pop-box>ul.list>li{list-item-$}*10
 .popup.popselect.popup-inline[data-fn-clickout]>input.input.pop-edit[data-popup-toggle]+.input.popup-item>span{select}^+.pop-box>ul.list>li{list-item-$}*10
+.popup.popselect.popselectm.popup-inline[data-fn-clickout]>input.input.pop-edit[data-popup-toggle]+.input.popup-item>.popup-text>(span{select}+.popup-label)^^+.pop-box>ul.list>li{list-item-$}*10
+.popup.popselect.popselectm.popup-inline[data-fn-clickout]>input.input.fong-lg.pad-lg.pop-edit[data-popup-toggle]+.input.fong-lg.pad-lg.popup-item>.popup-text>(span{select}+.popup-label)^^+.pop-box>ul.list>li{list-item-$}*10
+.popup.popselect.popselectm.popup-inline[data-fn-clickout]>input.input.fong-sm.pad-sm.pop-edit[data-popup-toggle]+.input.fong-sm.pad-sm.popup-item>.popup-text>(span{select}+.popup-label)^^+.pop-box>ul.list>li{list-item-$}*10
 		</pre>
 		<div class="view">
 <div class="popup popinput popup-inline" data-fn-clickout="">
@@ -208,9 +211,97 @@ ul.list[style='width:150px']>li{list-item-$}*10+li.active{active}+li{list-item-1
 		</ul>
 	</div>
 </div>
-
+<div class="popup popselect popselectm popup-inline" data-fn-clickout="">
+	<input type="text" class="input pop-edit" data-popup-toggle="">
+	<div class="input popup-item">
+		<div class="popup-text">
+			<span>select</span>
+			<div class="popup-label"></div>
 		</div>
 	</div>
+	<div class="pop-box">
+		<ul class="list">
+			<li>list-item-1</li>
+			<li>list-item-2</li>
+			<li>list-item-3</li>
+			<li>list-item-4</li>
+			<li>list-item-5</li>
+			<li>list-item-6</li>
+			<li>list-item-7</li>
+			<li>list-item-8</li>
+			<li>list-item-9</li>
+			<li>list-item-10</li>
+		</ul>
+	</div>
+</div>
+<div class="popup popselect popselectm popup-inline" data-fn-clickout="">
+	<input type="text" class="input pop-edit font-lg pad-lg" data-popup-toggle="">
+	<div class="input popup-item font-lg pad-lg">
+		<div class="popup-text">
+			<span>select</span>
+			<div class="popup-label"></div>
+		</div>
+	</div>
+	<div class="pop-box">
+		<ul class="list">
+			<li>list-item-1</li>
+			<li>list-item-2</li>
+			<li>list-item-3</li>
+			<li>list-item-4</li>
+			<li>list-item-5</li>
+			<li>list-item-6</li>
+			<li>list-item-7</li>
+			<li>list-item-8</li>
+			<li>list-item-9</li>
+			<li>list-item-10</li>
+		</ul>
+	</div>
+</div>
+<div class="popup popselect popselectm popup-inline" data-fn-clickout="">
+	<input type="text" class="input fong-sm pad-sm pop-edit" data-popup-toggle="">
+	<div class="input fong-sm pad-sm popup-item">
+		<div class="popup-text">
+			<span>select</span>
+			<div class="popup-label"></div>
+		</div>
+	</div>
+	<div class="pop-box">
+		<ul class="list">
+			<li>list-item-1</li>
+			<li>list-item-2</li>
+			<li>list-item-3</li>
+			<li>list-item-4</li>
+			<li>list-item-5</li>
+			<li>list-item-6</li>
+			<li>list-item-7</li>
+			<li>list-item-8</li>
+			<li>list-item-9</li>
+			<li>list-item-10</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="../js/clickout.js"></script>
 	<script type="text/javascript" src="../js/popup.js"></script>
@@ -220,9 +311,22 @@ ul.list[style='width:150px']>li{list-item-$}*10+li.active{active}+li{list-item-1
 				$(this).closest('.popinput').find('.input').eq(0).val($(this).text());
 			})
 			.on('click', '.popselect .list>li', function () {
-				var $pop = $(this).closest('.popselect');
-				$pop.find('.popup-item >span').text($(this).text());
-				$pop.removeClass('open');
+				var $this = $(this),
+					$pop = $this.closest('.popselect'),
+					multi = $pop.hasClass('popselectm');
+				if (multi) {
+					$this.toggleClass('selected');
+					var $selected = $pop.find('.list>li.selected');
+					$pop.find('.popup-label').text($selected.length || '');
+					$pop.find('.popup-text>span').text($selected.eq(0).text() || 'please select');
+				} else {
+					if (!$this.hasClass('active')) {
+						$pop.find('.list>li').removeClass('active');
+						$this.addClass('active');
+					}
+					$pop.find('.popup-item >span').text($(this).text());
+					$pop.removeClass('open');
+				}
 			})
 			;
 	</script>

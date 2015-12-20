@@ -30,11 +30,9 @@
 	// select.input { height: 2.29em; }
 
 	//扩展边样式
-	.input-hover {
-		&#{$input-access-able} {
-	    	border-color: $input-hover-bd-color;
-			box-shadow: 0 0 0 1px $input-hover-bd-color;
-		}
+	.input-hover:hover:not([disabled]){
+    	border-color: $input-hover-bd-color;
+		box-shadow: 0 0 0 1px $input-hover-bd-color;
 	}
 /*---!INPUT---*/
 }
