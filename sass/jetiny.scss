@@ -1,6 +1,7 @@
 @import "bourbon";
 
 $font-on: true !default;
+$color-on: true !default;
 $pad-on: true !default;
 
 $input-on: true !default;
@@ -9,6 +10,7 @@ $popup-on: true !default;
 $popinput-on: true !default;
 $popselect-on: true !default;
 $button-on: true !default;
+$radio-on: true !default;
 
 @import "mixins";
 

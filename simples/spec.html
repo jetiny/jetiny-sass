@@ -282,26 +282,54 @@ ul.list[style='width:150px']>li{list-item-$}*10+li.active{active}+li{list-item-1
 </div>
 		</div>
 	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<div class="demo-group">
+		<div class="info">描述</div>
+		<pre class="code">
+label.radio>input:radio[name=group1]+span.radio-text{Radio Demo}
+label.radio>input:radio[name=group1 checked=checked disabled=disabled]+span.radio-text{Radio Demo}
+label.radio.font-sm>input:radio[name=group1]+span.radio-text{Radio Demo}
+label.radio.font-lg>input:radio[name=group1]+span.radio-text{Radio Demo}
+label.radio.pad-sm>input:radio[name=group1]+span.radio-text{Radio Demo}
+label.radio.pad-lg>input:radio[name=group1]+span.radio-text{Radio Demo}
+label.radio.font-sm.pad-sm>input:radio[name=group1]+span.radio-text{Radio Demo}
+label.radio.font-lg.pad-lg>input:radio[name=group1]+span.radio-text{Radio Demo}
+label.radio.font-lg.pad-sm>input:radio[name=group1]+span.radio-text{Radio Demo}
+label.radio.font-sm.pad-lg>input:radio[name=group1]+span.radio-text{Radio Demo}^+br*2
+
+label.radio.incap>input:radio[name=group-incap]+span.radio-text{Radio Demo}
+label.radio.incap>input:radio[name=group-incap]+span.radio-text{Radio Demo}
+label.radio.incap>input:radio[name=group-incap checked=checked disabled=disabled]+span.radio-text{Radio Demo}^+br*2
+
+label.radio.cap>input:radio[name=group-cap]+span.radio-text{Radio Demo}
+label.radio.cap>input:radio[name=group-cap]+span.radio-text{Radio Demo}
+label.radio.cap>input:radio[name=group-cap checked=checked disabled=disabled]+span.radio-text{Radio Demo}^+br*2
+		</pre>
+		<div class="view">
+<label class="radio"><input type="radio" name="group1" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio"><input type="radio" name="group1" id="" checked disabled><span class="radio-text">Radio Demo</span></label>
+<label class="radio font-sm"><input type="radio" name="group1" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio font-lg"><input type="radio" name="group1" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio pad-sm"><input type="radio" name="group1" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio pad-lg"><input type="radio" name="group1" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio font-sm pad-sm"><input type="radio" name="group1" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio font-lg pad-lg"><input type="radio" name="group1" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio font-lg pad-sm"><input type="radio" name="group1" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio font-sm pad-lg"><input type="radio" name="group1" id=""><span class="radio-text">Radio Demo</span></label>
+<br>
+<br>
+<label class="radio incap"><input type="radio" name="group-incap" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio incap"><input type="radio" name="group-incap" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio incap"><input type="radio" name="group-incap" id="" checked disabled><span class="radio-text">Radio Demo</span></label>
+<br>
+<br>
+<label class="radio cap"><input type="radio" name="group-cap" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio cap"><input type="radio" name="group-cap" id=""><span class="radio-text">Radio Demo</span></label>
+<label class="radio cap"><input type="radio" name="group-cap" id="" checked disabled><span class="radio-text">Radio Demo</span></label>
+<br>
+<br>
+
+		</div>
+	</div>
 	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="../js/clickout.js"></script>
 	<script type="text/javascript" src="../js/popup.js"></script>

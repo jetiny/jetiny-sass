@@ -1,0 +1,29 @@
+
+@mixin radio-label() {
+	position: absolute;
+    left: -9999px;
+    // visibility: hidden;	//这样就不能获得焦点了
+	+ label {
+		position: relative;
+		cursor: pointer;
+		display: inline-block;
+    	// font-size: 14px;			//要不要给个默认的字体呢
+		// height: 18px;			//chrome默认高度，不需要覆盖
+		// line-height: 18px;
+		padding-left: 25px;
+		&::before,
+		&::after {
+			box-sizing: content-box;
+			// z-index: 0;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			margin: .2em;
+			width: 1em;
+			height: 1em;
+			border: .2em solid transparent;
+  			@include transition(.28s ease);
+		}
+	}
+}

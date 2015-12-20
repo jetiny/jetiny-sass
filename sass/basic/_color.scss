@@ -1,0 +1,15 @@
+// Google Color Palette defined: http://www.google.com/design/spec/style/color.html
+
+@if $color-on {
+    // Shades Colors
+    @if $color-make-shades {
+        @each $color, $color-value in $shades {
+            @include color-make($color, $color-value);
+        }
+    }
+
+    // Color Classes
+    @if $color-make-colors and $color-make-colors-vars {
+        @include color-make-vars($color-make-colors-vars);
+    }
+}
