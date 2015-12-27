@@ -3,10 +3,15 @@
 
 @if $radio-on {
     /*---@RADIO---*/
-    .radio {
+    .#{$jetiny-prefix}radio {
         position: relative;
         border: 1px solid transparent;
         cursor: pointer;
+
+        // reset
+        font-weight: normal;
+        display: inline-block;
+        margin: 0;
 
         @include make-font-size-default;
 

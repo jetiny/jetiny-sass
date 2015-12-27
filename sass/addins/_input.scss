@@ -3,7 +3,7 @@
 
 @if $input-on {
 /*---@INPUT---*/
-	.input {
+	.#{$jetiny-prefix}input {
 		@include make-input();
 		@if $input-border-width {
 			border-width: $input-border-width;
@@ -30,7 +30,7 @@
 	// select.input { height: 2.29em; }
 
 	//扩展边样式
-	.input-hover:hover:not([disabled]){
+	.#{$jetiny-prefix}input-hover:hover:not([disabled]){
     	border-color: $input-hover-bd-color;
 		box-shadow: 0 0 0 1px $input-hover-bd-color;
 	}

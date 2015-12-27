@@ -3,7 +3,7 @@
 
 @if $list-on {
     /*---@LIST---*/
-    .list {
+    .#{$jetiny-prefix}list {
         @include make-list;
 
         background-color: $list-bg-color;

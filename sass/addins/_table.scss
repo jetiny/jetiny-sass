@@ -1,6 +1,6 @@
 @if $table-on {
     /*---@TABLE---*/
-    .table {
+    .#{$jetiny-prefix}table {
         @include make-table-default;
 
         > thead {

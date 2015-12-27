@@ -3,7 +3,7 @@
     // div>button.btn.btn-default.font-sm{default Small}+button.btn.btn-default.font-lg{default large}+i
     // div>button.btn.btn-primary{primary}+button.btn.btn-primary.disabled{primary disabled}+i
     // div>button.btn.btn-primary.font-sm{primary Small}+button.btn.btn-primary.font-lg{primary large}+i
-    .btn {
+    .#{$jetiny-prefix}btn {
         @include make-button;
 
         @if $button-border-width {
@@ -15,11 +15,11 @@
         @include make-pad-default;
     }
 
-    .btn-default {
+    .#{$jetiny-prefix}btn-default {
         @include make-button-variant($button-default-text-color, $button-default-bg-color, $button-default-bd-color);
     }
 
-    .btn-primary {
+    .#{$jetiny-prefix}btn-primary {
         @include make-button-variant($button-primary-text-color, $button-primary-bg-color, $button-primary-bd-color);
     }
 }
