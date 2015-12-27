@@ -21,6 +21,7 @@ gulp.task('sass', function () {
             'bourbon/app/assets/stylesheets',
             'neat/app/assets/stylesheets',
             'normalize-scss/sass',
+            'support-for/sass',
         ]));
     return gulp.src(['./sass/**/*.scss'])
         .pipe(sass({

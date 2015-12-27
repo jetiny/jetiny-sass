@@ -1,0 +1,65 @@
+
+@mixin make-fontpad-ll() {
+	@include make-font-size-lg;
+	@include make-pad-lg;
+}
+
+@mixin make-fontpad-ls() {
+	@include make-font-size-lg;
+	@include make-pad-sm;
+}
+
+@mixin make-fontpad-sl() {
+	@include make-font-size-sm;
+	@include make-pad-lg;
+}
+
+@mixin make-fontpad-ss() {
+	@include make-font-size-sm;
+	@include make-pad-sm;
+}
+
+@mixin make-fontpad-sd() {
+	@include make-font-size-sm;
+	@include make-pad-default;
+}
+
+@mixin make-fontpad-ds() {
+	@include make-font-size-default;
+	@include make-pad-sm;
+}
+
+@mixin make-fontpad-ld() {
+	@include make-font-size-lg;
+	@include make-pad-default;
+}
+
+@mixin make-fontpad-dl() {
+	@include make-font-size-default;
+	@include make-pad-lg;
+}
+
+@mixin make-fontpad-dd() {
+	@include make-font-size-default;
+	@include make-pad-default;
+}
+
+@mixin make-fontpad-item($name) {
+	&.ll { #{$name} { @include make-fontpad-ll;	}}
+	&.ls { #{$name} { @include make-fontpad-ls;	}}
+	&.ss { #{$name} { @include make-fontpad-ss;	}}
+	&.sl { #{$name} { @include make-fontpad-sl;	}}
+	&.ld { #{$name} { @include make-fontpad-ld;	}}
+	&.sd { #{$name} { @include make-fontpad-sd;	}}
+	&.dl { #{$name} { @include make-fontpad-dl;	}}
+	&.ds { #{$name} { @include make-fontpad-ds;	}}
+	&.dd { #{$name} { @include make-fontpad-dd;	}}
+}
+
+@mixin make-fontpad-default($name) {
+	#{$name} {
+		@include make-fontpad-dd;
+		@content;
+	}
+	@include make-fontpad-item($name);
+}

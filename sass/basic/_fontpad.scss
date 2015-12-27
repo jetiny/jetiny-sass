@@ -1,0 +1,11 @@
+$fontpad-on: false !default;
+
+@if $fontpad-on {
+    /*---@FONTPAD---*/
+	.fontpad {
+		@include make-fontpad-default('>li, >.item'){
+
+		}
+	}
+    /*---!FONTPAD---*/
+}

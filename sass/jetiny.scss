@@ -1,8 +1,11 @@
 @import "bourbon";
 
+@import "normalize/import-now";
+
 $font-on: true !default;
-$color-on: true !default;
 $pad-on: true !default;
+$fontpad-on: true !default;
+$color-on: true !default;
 
 $input-on: true !default;
 $list-on: true !default;
