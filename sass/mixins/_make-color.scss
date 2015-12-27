@@ -352,7 +352,7 @@ $colors: (
   "shades": $shades
 );
 
-@mixin color-make( $color_name, $color_value, $color_type : null) {
+@mixin make-color( $color_name, $color_value, $color_type : null) {
   @if ($color_type == "base" or not($color_type)) {
     .bg-#{$color_name} {
       background-color: $color_value !important;
@@ -377,12 +377,12 @@ $colors: (
   }
 }
 
-@mixin color-make-vars($vars) {
+@mixin make-color-vars($vars) {
   @each $color_name in $vars {
     @if map-has-key($colors, $color_name) {
       $curr_color: map-get($colors, $color_name);
       @each $color_type, $color_value in $curr_color {
-        @include color-make($color_name, $color_value, $color_type);
+        @include make-color($color_name, $color_value, $color_type);
       }
     }
   }

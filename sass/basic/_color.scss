@@ -1,15 +1,44 @@
 // Google Color Palette defined: http://www.google.com/design/spec/style/color.html
 
+$color-on: false !default;                          //是否开启
+
+$color-make-shades: $color-on !default;
+$color-make-colors: false !default;
+
+$color-make-colors-vars: 
+    "red"                       //红色        #f44336 red
+    "pink"                      //粉色        #e91e63 pink
+    "purple"                    //紫色        #9c27b0 purple
+        "deep-purple"               //deep紫     #673ab7 deep-purple
+        "indigo"                    //靛蓝
+    "blue"                      //蓝色
+        "light-blue"                //浅蓝
+        "cyan"                      //青色
+        "teal"                      //青绿色   #009688 teal
+    "green"                     //绿色
+        "light-green"               //浅绿
+        "lime"                      //橙灰色
+    "yellow"                    //黄色
+        "amber"                     //橙黄色
+    "orange"                    //橙色
+        "deep-orange"               //deep橙
+    "brown"                     //棕色
+        "blue-grey"                 //蓝灰色
+    "grey"                      //灰色
+    
+    !default;
+
+
 @if $color-on {
     // Shades Colors
     @if $color-make-shades {
         @each $color, $color-value in $shades {
-            @include color-make($color, $color-value);
+            @include make-color($color, $color-value);
         }
     }
 
     // Color Classes
     @if $color-make-colors and $color-make-colors-vars {
-        @include color-make-vars($color-make-colors-vars);
+        @include make-color-vars($color-make-colors-vars);
     }
 }

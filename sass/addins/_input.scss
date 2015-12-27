@@ -8,9 +8,7 @@
 		@if $input-border-width {
 			border-width: $input-border-width;
 		}
-		// @include make-input-size($input-padding, false, $input-font-size, $input-line-height, $input-border-radius);
-		@include make-font-size-default;
-		@include make-pad-default;
+		@include make-size-default;
 
 		@include make-input-variant($input-default-text-color, $input-default-bg-color, $input-default-bd-color);
 

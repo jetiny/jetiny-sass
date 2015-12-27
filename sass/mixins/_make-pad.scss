@@ -1,3 +1,9 @@
+// 内间距
+
+$pad-padding-sm: 0.25em !default;
+$pad-padding-default: 0.5em !default;
+$pad-padding-lg: 0.75em !default;
+
 @mixin make-pad-default($padding: $pad-padding-default) {
     padding: $padding;
 }

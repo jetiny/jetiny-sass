@@ -1,0 +1,77 @@
+
+$group-item-selector : '>li, >.item' !default;
+
+
+@mixin make-group-ll() {
+	@include make-font-size-lg;
+	@include make-pad-lg;
+}
+
+@mixin make-group-ls() {
+	@include make-font-size-lg;
+	@include make-pad-sm;
+}
+
+@mixin make-group-sl() {
+	@include make-font-size-sm;
+	@include make-pad-lg;
+}
+
+@mixin make-group-ss() {
+	@include make-font-size-sm;
+	@include make-pad-sm;
+}
+
+@mixin make-group-sd() {
+	@include make-font-size-sm;
+	@include make-pad-default;
+}
+
+@mixin make-group-ds() {
+	@include make-font-size-default;
+	@include make-pad-sm;
+}
+
+@mixin make-group-ld() {
+	@include make-font-size-lg;
+	@include make-pad-default;
+}
+
+@mixin make-group-dl() {
+	@include make-font-size-default;
+	@include make-pad-lg;
+}
+
+@mixin make-group-dd() {
+	@include make-font-size-default;
+	@include make-pad-default;
+}
+
+@mixin make-group-item($name) {
+	&.ll { #{$name} { @include make-group-ll;	}}
+	&.ls { #{$name} { @include make-group-ls;	}}
+	&.ss { #{$name} { @include make-group-ss;	}}
+	&.sl { #{$name} { @include make-group-sl;	}}
+	&.ld { #{$name} { @include make-group-ld;	}}
+	&.sd { #{$name} { @include make-group-sd;	}}
+	&.dl { #{$name} { @include make-group-dl;	}}
+	&.ds { #{$name} { @include make-group-ds;	}}
+	&.dd { #{$name} { @include make-group-dd;	}}
+}
+
+@mixin make-group($name) {
+	// reset ul style & margin & padding
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+	#{$name} {
+		@include make-size-default;
+		@content;
+	}
+	@include make-group-item($name);
+}
+
+@mixin make-group-default() {
+	@include make-group($group-item-selector);
+}

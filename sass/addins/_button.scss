@@ -10,9 +10,7 @@
             border-width: $button-border-width;
         }
 
-        @include make-font-size-default;
-
-        @include make-pad-default;
+        @include make-size-default;
     }
 
     .#{$jetiny-prefix}btn-default {

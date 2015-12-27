@@ -2,24 +2,19 @@
 @import "default_vars";
 
 // mixins
-@import "mixins/make_icon";
 @import "mixins/opacity";
 
+@import "mixins/make-icon";
+@import "mixins/make-font-size";
+@import "mixins/make-pad";
+@import "mixins/make-group";
+@import "mixins/make-color";
+@import "mixins/make-size";
+
 // basic
-@import "basic/font_vars";
-@import "basic/font_mix";
-
-@import "basic/pad_vars";
-@import "basic/pad_mix";
-
-@import "basic/fontpad_mix";
 
 @import "basic/hover_vars";
 @import "basic/hover_mix";
-
-@import "basic/color_vars";
-@import "basic/color_mix";
-
 
 // addins
 @import "addins/input_vars";

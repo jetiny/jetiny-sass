@@ -1,0 +1,12 @@
+// line-height(1.0~1.2)
+$line-height-default: 1.2 !default;
+
+@mixin make-line-height-default() {
+	line-height: $line-height-default;
+}
+
+@mixin make-size-default() {
+	@include make-font-size-default;
+	@include make-pad-default;
+	@include make-line-height-default;
+}

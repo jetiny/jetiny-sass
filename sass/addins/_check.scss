@@ -10,9 +10,7 @@
         display: inline-block;
         margin: 0;
 
-        @include make-font-size-default;
-
-        @include make-pad-default;
+        @include make-size-default;
 
         padding-left: 2em !important;
 

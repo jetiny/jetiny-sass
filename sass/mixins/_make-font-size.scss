@@ -1,0 +1,17 @@
+// 字体
+
+$font-size-sm: 12px !default;
+$font-size-default: 14px !default;
+$font-size-lg: 16px !default;
+
+@mixin make-font-size-default($font-size: $font-size-default) {
+    font-size: $font-size;
+}
+
+@mixin make-font-size-sm($font-size: $font-size-sm) {
+    @include make-font-size-default($font-size-sm);
+}
+
+@mixin make-font-size-lg($font-size: $font-size-lg) {
+    @include make-font-size-default($font-size-lg);
+}

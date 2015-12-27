@@ -1,0 +1,9 @@
+$group-on: false !default;
+
+@if $group-on {
+    /*---@GROUP---*/
+	.group {
+		@include make-group-default;
+	}
+    /*---!GROUP---*/
+}
