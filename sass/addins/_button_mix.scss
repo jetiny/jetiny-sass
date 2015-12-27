@@ -30,21 +30,6 @@
   @content;
 }
 
-// Button sizes
-@mixin  make-button-size($padding-vertical, $padding-horizontal: false, $font-size : false, $border-radius : false) {
-  @if $padding-horizontal {
-    padding: $padding-vertical $padding-horizontal; //两端对齐
-  } @else {
-    padding: $padding-vertical;	//两端对齐
-  }
-  @if $font-size {
-    font-size: $font-size;							//字体
-  }
-  @if $border-radius {
-    border-radius: $border-radius;
-  }
-}
-
 // Button variants
 @mixin  make-button-variant($color, $background, $border: false) {
   color: $color;

@@ -15,24 +15,6 @@ $input-access-able : ":not(:focus):not(:hover):not([disabled])" !default;
   }
 }
 
-// input sizes
-@mixin  make-input-size($padding-vertical, $padding-horizontal: false, $font-size : false, $line-height : false, $border-radius : false) {
-  @if $padding-horizontal {
-    padding: $padding-vertical $padding-horizontal; //两端对齐
-  } @else {
-    padding: $padding-vertical;	//两端对齐
-  }
-  @if $font-size {//字体
-    font-size: $font-size;              
-  }
-  @if $line-height { //由于input和select默认高度不一致，所以需要强制修改行高
-    line-height: $line-height;
-  }
-  @if $border-radius {
-    border-radius: $border-radius;
-  }
-}
-
 // input variants
 @mixin  make-input-variant($color, $background, $border: false) {
   color: $color;
