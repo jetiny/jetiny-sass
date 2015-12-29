@@ -1,0 +1,17 @@
+
+@mixin when-hover-active() {
+	&:focus,
+	&:hover,
+	&:active,
+	&.active {
+		@content;
+	}
+}
+
+@mixin when-disabled() {
+	&[disabled],
+	&.disabled,
+	fieldset[disabled] & {
+		@content;
+	}
+}
