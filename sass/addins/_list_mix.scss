@@ -21,15 +21,17 @@
     font-weight: normal;
     white-space: nowrap; // prevent links from randomly breaking onto new lines
 
-    @include hover-focus {
+    &:focus,
+    &:hover {
         text-decoration: none;
         background-color: $list-link-hover-bg-color;
     }
 
-
     // Active state
     &.active {
-        @include plain-hover-focus {
+        &,
+        &:focus,
+        &:hover {
             text-decoration: none;
             background-color: $list-link-active-bg-color;
             outline: 0;
@@ -40,13 +42,16 @@
     //
     // Gray out text and ensure the hover/focus state remains gray
     &.disabled {
-        @include plain-hover-focus {
+        &,
+        &:focus,
+        &:hover {
             color: $list-link-disabled-color;
         }
 
 
         // Nuke hover/focus effects
-        @include hover-focus {
+        &:focus,
+        &:hover {
             text-decoration: none;
             cursor: default;
             background-color: transparent;

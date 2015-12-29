@@ -21,3 +21,13 @@
 		}
 	}
 }
+
+.button {
+	border: 1px solid transparent;              // 去除 Button的默认边框样式 + 去除 Border宽度
+	@include make-form-disabled;
+	@include make-flat-variant($button-default-text-color, $button-default-bg-color, $button-default-bg-color);
+}
+
+.button-s1 {
+	@include make-flat-variant($button-primary-text-color, $button-primary-bg-color, $button-primary-bd-color);
+}

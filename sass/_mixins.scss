@@ -3,6 +3,7 @@
 
 // mixins
 @import "mixins/opacity";
+@import "mixins/when";
 
 @import "mixins/make-icon";
 @import "mixins/make-font-size";
@@ -10,11 +11,9 @@
 @import "mixins/make-group";
 @import "mixins/make-color";
 @import "mixins/make-size";
+@import "mixins/make-variant";
 
 // basic
-
-@import "basic/hover_vars";
-@import "basic/hover_mix";
 
 // addins
 @import "addins/input_vars";

@@ -2,7 +2,6 @@
 
 $group-item-selector : '>li, >.item' !default;
 
-
 @mixin make-group-ll() {
 	@include make-font-size-lg;
 	@include make-pad-lg;
@@ -70,9 +69,42 @@ $group-item-selector : '>li, >.item' !default;
 		@include make-size-default;
 		@content;
 	}
+
+	&.inline {
+		display: inline-block;
+		@include clearfix;
+
+		#{$name} {
+			float: left;
+		}
+	}
+
 	@include make-group-item($name);
 }
 
+$group-item-selectors : $group-item-selector;
+
 @mixin make-group-default() {
-	@include make-group($group-item-selector);
+	@include make-group($group-item-selectors);
 }
+
+// 添加一个group选择器
+@mixin group-append-selector($selector) {
+	$lists : ();
+
+	@each $item in $group-item-selectors { //取出旧数据再来一遍
+		$item: unquote($item);
+		$lists: append($lists, $item, comma);
+	}
+
+	@if $selector { //添加新数据
+		$selector: unquote($selector);
+		$lists : append($lists , $selector, comma);
+	}
+
+	$group-item-selectors : $lists !global; //导出全局
+	// @warn #{$group-item-selectors};
+}
+
+// @include group-append-selector('&>.btn');
+// @include group-append-selector('&.menu-group>.menu');
