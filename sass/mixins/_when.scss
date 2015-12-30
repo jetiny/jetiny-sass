@@ -17,7 +17,7 @@
 	}
 }
 
-// 表单禁用
+// 表单元素禁用
 @mixin make-form-element-disabled() {
 	@include when-form-element-disabled {
 		cursor: default;

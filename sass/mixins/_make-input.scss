@@ -3,7 +3,6 @@
 	border: 0px solid;              // 去除 input的默认边框样式 + 去除 Border宽度
 	// vertical-align: middle;         // 用来对齐
 	outline: none;                  // 去除默认的outline样式
-	@include make-form-element-disabled;
 }
 
 // flat样式
