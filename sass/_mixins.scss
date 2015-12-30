@@ -12,6 +12,8 @@
 @import "mixins/make-color";
 @import "mixins/make-size";
 @import "mixins/make-variant";
+@import "mixins/make-button";
+@import "mixins/make-input";
 
 // basic
 
@@ -32,7 +34,6 @@
 @import "addins/popinput_mix";
 
 @import "addins/button_vars";
-@import "addins/button_mix";
 
 @import "addins/radio_vars";
 @import "addins/radio_mix";

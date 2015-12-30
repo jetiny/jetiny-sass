@@ -1,4 +1,4 @@
-
+// 活动
 @mixin when-hover-active() {
 	&:focus,
 	&:hover,
@@ -8,10 +8,20 @@
 	}
 }
 
-@mixin when-disabled() {
+// 禁用
+@mixin when-form-element-disabled() {
 	&[disabled],
 	&.disabled,
 	fieldset[disabled] & {
 		@content;
 	}
+}
+
+// 表单禁用
+@mixin make-form-element-disabled() {
+	@include when-form-element-disabled {
+		cursor: default;
+		box-shadow: none;
+		@include opacity(.65);
+	};
 }

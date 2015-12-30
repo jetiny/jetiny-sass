@@ -10,17 +10,15 @@
 		}
 		@include make-size-default;
 
-		@include make-input-variant($input-default-text-color, $input-default-bg-color, $input-default-bd-color);
+		@include make-input-flat-variant($input-default-text-color, $input-default-bg-color, $input-default-bd-color);
 
 		&.error {
 			&#{$input-access-able} {
-				border-color: $input-error-bd-color;
-				box-shadow: 0 0 0 1px $input-error-bd-color;
+				@include make-border-shadow($input-error-bd-color);
 			}
 		}
 		&.success#{$input-access-able} {
-				border-color: $input-success-bd-color;
-				box-shadow: 0 0 0 1px $input-success-bd-color;
+			@include make-border-shadow($input-success-bd-color);
 		}
 	}
 
@@ -29,8 +27,7 @@
 
 	//扩展边样式
 	.#{$jetiny-prefix}input-hover:hover:not([disabled]){
-    	border-color: $input-hover-bd-color;
-		box-shadow: 0 0 0 1px $input-hover-bd-color;
+		@include make-border-shadow($input-hover-bd-color);
 	}
 /*---!INPUT---*/
 }

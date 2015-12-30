@@ -12,26 +12,8 @@
 	}
 }
 
-// 表单禁用
-@mixin make-form-disabled() {
-	@include when-disabled {
-		cursor: default;
-		box-shadow: none;
-		@include opacity(.65);
-	};
-}
-
-// flat样式
-@mixin make-flat-variant($color, $bg-color, $bd-color) {
-	@include make-color-variant($color, $bg-color, $bd-color); //默认颜色
-	@include when-hover-active { //活动颜色
-		@include make-color-variant(
-			$color, 
-			if($bg-color, darken($bg-color, 10%) , $bg-color), 
-			if($bd-color, darken($bd-color, 10%) , $bd-color)
-		);
-	};
-	@include when-disabled { //禁用颜色
-		@include make-color-variant($color, $bg-color, transparent);
-	};
+//加粗边框
+@mixin make-border-shadow($bd-color) {
+	border-color: $bd-color;
+	box-shadow: 0 0 0 1px $bd-color;
 }

@@ -1,0 +1,28 @@
+
+@mixin make-button-default() {
+	display: inline-block;			// 块定义
+	text-decoration: none;			// 去除A下划线
+	// http://wf.uisdc.com/cn/input/touch-input/touchevents/
+	touch-action: manipulation; 	// 允许浏览器双方向滚动，也允许双指缩放；但忽略其他手势。
+	cursor: pointer;            	// 鼠标样式
+	background-image: none; 		// Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	white-space: nowrap;			// 文本不进行换行
+	border: 0px solid;              // 去除 Button的默认边框样式 + 去除 Border宽度
+	@include user-select(none);
+    @include make-form-element-disabled;
+}
+
+// flat样式
+@mixin make-button-flat-variant($color, $bg-color, $bd-color) {
+	@include make-color-variant($color, $bg-color, $bd-color); //默认颜色
+	@include when-hover-active { //活动颜色
+		@include make-color-variant(
+			$color, 
+			if($bg-color, darken($bg-color, 10%) , $bg-color), 
+			if($bd-color, darken($bd-color, 10%) , $bd-color)
+		);
+	};
+	@include when-form-element-disabled { //禁用颜色
+		@include make-color-variant($color, $bg-color, transparent);
+	};
+}

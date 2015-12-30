@@ -24,10 +24,21 @@
 
 .button {
 	border: 1px solid transparent;              // 去除 Button的默认边框样式 + 去除 Border宽度
-	@include make-form-disabled;
-	@include make-flat-variant($button-default-text-color, $button-default-bg-color, $button-default-bg-color);
+	@include make-form-element-disabled;
+	@include make-size-default;
+	@include make-button-flat-variant($button-default-text-color, $button-default-bg-color, $button-default-bg-color);
 }
 
 .button-s1 {
-	@include make-flat-variant($button-primary-text-color, $button-primary-bg-color, $button-primary-bd-color);
+	@include make-button-flat-variant($button-primary-text-color, $button-primary-bg-color, $button-primary-bd-color);
+}
+
+
+.xinput {
+	@include make-input-default;
+	@include make-size-default;
+	@if $input-border-width {
+		border-width: $input-border-width;
+	}
+	@include make-input-flat-variant($input-default-text-color, $input-default-bg-color, $input-default-bd-color);
 }
