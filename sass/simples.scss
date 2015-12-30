@@ -27,11 +27,12 @@
 	@include make-form-element-disabled;
 	@include make-size-default;
 	@include make-button-flat-variant($button-default-text-color, $button-default-bg-color, $button-default-bg-color);
+
+	@include when-hover-active {
+		box-shadow: none;
+	}
 }
 
-.button-s1 {
-	@include make-button-flat-variant($button-primary-text-color, $button-primary-bg-color, $button-primary-bd-color);
-}
 
 .xinput {
 	@include make-input-default;
@@ -44,9 +45,14 @@
 		border-width: $input-border-width;
 	}
 
-	@include when-hover-active{
+	@include when-hover-active {
 		box-shadow: none;
 	}
+	
+}
+
+.button-s1 {
+	@include make-button-flat-variant($button-primary-text-color, $button-primary-bg-color, $button-primary-bd-color);
 }
 
 .xinput-s1 {
