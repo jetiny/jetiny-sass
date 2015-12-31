@@ -1,9 +1,34 @@
-// 活动
-@mixin when-hover-active() {
+
+@mixin when-hover-focus-active() {
 	&:focus,
 	&:hover,
 	&:active,
 	&.active {
+		@content;
+	}
+}
+
+@mixin when-hover-focus() {
+	&:focus,
+	&:hover {
+		@content;
+	}
+}
+
+@mixin when-focus() {
+	&:focus{
+		@content;
+	}
+}
+
+@mixin when-hover() {
+	&:hover{
+		@content;
+	}
+}
+
+@mixin when-active() {
+	&:active{
 		@content;
 	}
 }

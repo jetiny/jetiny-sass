@@ -37,82 +37,101 @@ $state-on: false !default;
 /*---@STATE---*/
 
 	// BUTTON
+// weight + lite 版本
 	.st-default { // 一般
 		@include make-button-variant($st-default-text-color, $st-default-bg-color, $st-default-bd-color);
+	}
+	.st-default-lite { // 一般
+		@include make-button-variant($st-text-color-black, $st-text-color-white, $st-default-bd-color);
 	}
 	.st-primary { // 重要
 		@include make-button-variant($st-primary-text-color, $st-primary-bg-color, $st-primary-bd-color);
 	}
+	.st-primary-lite { // 重要
+		@include make-button-variant($st-primary-text-color, $st-primary-bg-color, $st-primary-bd-color, true);
+	}
 	.st-danger { // 危险 非常重要
 		@include make-button-variant($st-danger-text-color, $st-danger-bg-color, $st-danger-bd-color);
+	}
+	.st-danger-lite { // 危险 非常重要
+		@include make-button-variant($st-danger-text-color, $st-danger-bg-color, $st-danger-bd-color, true);
 	}
 	.st-warn { // 警告
 		@include make-button-variant($st-warn-text-color, $st-warn-bg-color, $st-warn-bd-color);
 	}
+	.st-warn-lite { // 警告
+		@include make-button-variant($st-warn-text-color, $st-warn-bg-color, $st-warn-bd-color, true);
+	}
 	.st-info { // 信息
 		@include make-button-variant($st-info-text-color, $st-info-bg-color, $st-info-bd-color);
+	}
+	.st-info-lite { // 信息
+		@include make-button-variant($st-info-text-color, $st-info-bg-color, $st-info-bd-color, true);
 	}
 	.st-done { // 完成
 		@include make-button-variant($st-done-text-color, $st-done-bg-color, $st-done-bd-color);
 	}
-
-	.st-white {
-
-		 .st-default,
-		&.st-default { // 重要
-			@at-root .st-default-white,
-			&, {
-				@include make-button-variant($st-text-color-black, $st-text-color-white, $st-default-bd-color);
-			}
-		}
-
-		 .st-primary,
-		&.st-primary { // 重要
-			@at-root .st-primary-white,
-			&, {
-				@include make-button-variant($st-primary-text-color, $st-primary-bg-color, $st-primary-bd-color, true);
-			}
-		}
-
-		.st-danger,
-		&.st-danger { // 危险 非常重要
-			@at-root .st-danger-white,
-			&, {
-				@include make-button-variant($st-danger-text-color, $st-danger-bg-color, $st-danger-bd-color, true);
-			}
-		}
-
-		.st-warn,
-		&.st-warn { // 警告
-			@at-root .st-warn-white,
-			&, {
-				@include make-button-variant($st-warn-text-color, $st-warn-bg-color, $st-warn-bd-color, true);
-			}
-		}
-
-		.st-info,
-		&.st-info { // 信息
-			@at-root .st-info-white,
-			&, {
-				@include make-button-variant($st-info-text-color, $st-info-bg-color, $st-info-bd-color, true);
-			}
-		}
-
-		.st-done,
-		&.st-done { // 完成
-			@at-root .st-done-white,
-			&, {
-				@include make-button-variant($st-done-text-color, $st-done-bg-color, $st-done-bd-color, true);
-			}
-		}
+	.st-done-lite { // 完成
+		@include make-button-variant($st-done-text-color, $st-done-bg-color, $st-done-bd-color, true);
 	}
+// invert 反转版 太大了,去掉
+	// .st-white {
+
+	// 	 .st-default,
+	// 	&.st-default { // 重要
+	// 		@at-root .st-default-white,
+	// 		&, {
+	// 			@include make-button-variant($st-text-color-black, $st-text-color-white, $st-default-bd-color);
+	// 		}
+	// 	}
+
+	// 	 .st-primary,
+	// 	&.st-primary { // 重要
+	// 		@at-root .st-primary-white,
+	// 		&, {
+	// 			@include make-button-variant($st-primary-text-color, $st-primary-bg-color, $st-primary-bd-color, true);
+	// 		}
+	// 	}
+
+	// 	.st-danger,
+	// 	&.st-danger { // 危险 非常重要
+	// 		@at-root .st-danger-white,
+	// 		&, {
+	// 			@include make-button-variant($st-danger-text-color, $st-danger-bg-color, $st-danger-bd-color, true);
+	// 		}
+	// 	}
+
+	// 	.st-warn,
+	// 	&.st-warn { // 警告
+	// 		@at-root .st-warn-white,
+	// 		&, {
+	// 			@include make-button-variant($st-warn-text-color, $st-warn-bg-color, $st-warn-bd-color, true);
+	// 		}
+	// 	}
+
+	// 	.st-info,
+	// 	&.st-info { // 信息
+	// 		@at-root .st-info-white,
+	// 		&, {
+	// 			@include make-button-variant($st-info-text-color, $st-info-bg-color, $st-info-bd-color, true);
+	// 		}
+	// 	}
+
+	// 	.st-done,
+	// 	&.st-done { // 完成
+	// 		@at-root .st-done-white,
+	// 		&, {
+	// 			@include make-button-variant($st-done-text-color, $st-done-bg-color, $st-done-bd-color, true);
+	// 		}
+	// 	}
+	// }
 
 	// INPUT
 	.st-required,
 	.st-access,
 	.st-success,
 	.st-error, {
-		@include when-hover-active {
+		@include when-hover-focus {
 			box-shadow: none;
 		}
 	}

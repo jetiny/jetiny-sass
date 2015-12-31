@@ -1,5 +1,6 @@
 
 @mixin make-button-default() {
+	position: relative;				// 需要设成相对的, 方便内嵌或定位
 	display: inline-block;			// 块定义
 	text-decoration: none;			// 去除A下划线
 	// http://wf.uisdc.com/cn/input/touch-input/touchevents/
@@ -20,7 +21,7 @@
 		$color : $cl;
 	}
 	@include make-color-variant($color, $bg-color, $bd-color); //默认颜色
-	@include when-hover-active { //活动颜色
+	@include when-hover-focus { //活动颜色
 		@if $invert {
 			@include make-color-variant(
 				$bg-color, 
@@ -43,4 +44,22 @@
 			if($bd-color, darken($bd-color, 10%) , $bd-color)
 		);
 	};
+}
+
+
+// 按下移动效果
+@mixin make-button-tick() {
+	position: relative;
+	top: 0;
+	@include when-active {
+		top: 1px;
+	};
+}
+
+// 内阴影效果
+@mixin make-button-inner-shadow() {
+	box-shadow: none;
+	@include when-active {
+		box-shadow: inset 0 .2em .5em rgba(0, 0, 0, 0.2);
+	};	
 }
