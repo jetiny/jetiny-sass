@@ -1,31 +1,106 @@
+// border-shadow
+$st-required-bd-color: color("amber") !default;
+$st-access-bd-color: #26A69A !default;
+$st-success-bd-color: #4CAE4C !default;
+$st-error-bd-color: #FF0000 !default;
 
-$state-required-bd-color: color("amber") !default;
-$state-access-bd-color: #26A69A !default;
-$state-success-bd-color: #4CAE4C !default;
-$state-error-bd-color: #FF0000 !default;
+$st-text-color-white : #FFF !default;
 
-.state-required,
-.state-access,
-.state-success,
-.state-error, {
-	@include when-hover-active {
-		box-shadow: none;
+$st-primary-text-color 		:  $st-text-color-white 	!default;
+$st-primary-bg-color 		:  color('blue', 'd3') 	!default;
+$st-primary-bd-color 		:  color('blue', 'd4')	!default;
+
+$st-danger-text-color 		:  $st-text-color-white 	!default;
+$st-danger-bg-color 			:  color('red', 'd1') 	!default;
+$st-danger-bd-color 			:  color('red', 'd3') 	!default;
+
+$st-warn-text-color 		:  $st-text-color-white 	!default;
+$st-warn-bg-color 			:  color('amber', 'd3') 	!default;
+$st-warn-bd-color 			:  color('amber', 'd4') 	!default;
+
+$st-info-text-color 		:  $st-text-color-white 	!default;
+$st-info-bg-color 			:  #4198D2 	!default;
+$st-info-bd-color 			:  color('blue', 'd2') 	!default;
+
+$st-done-text-color 		:  $st-text-color-white 	!default;
+$st-done-bg-color 			:  color('green', 'd1') 	!default;
+$st-done-bd-color 			:  color('green', 'd2') 	!default;
+
+$state-on: false !default;
+
+@if $state-on {
+/*---@STATE---*/
+
+	// BUTTON
+	.st-primary { // 重要
+		@include make-button-variant($st-primary-text-color, $st-primary-bg-color, $st-primary-bd-color);
 	}
+	.st-danger { // 危险 非常重要
+		@include make-button-variant($st-danger-text-color, $st-danger-bg-color, $st-danger-bd-color);
+	}
+	.st-warn { // 警告
+		@include make-button-variant($st-warn-text-color, $st-warn-bg-color, $st-warn-bd-color);
+	}
+	.st-info { // 信息
+		@include make-button-variant($st-info-text-color, $st-info-bg-color, $st-info-bd-color);
+	}
+	.st-done { // 完成
+		@include make-button-variant($st-done-text-color, $st-done-bg-color, $st-done-bd-color);
+	}
+
+	.st-invert {
+		 .st-primary,
+		&.st-primary { // 重要
+			@at-root .st-primary-invert,
+			&, {
+				@include make-button-variant($st-primary-text-color, $st-primary-bg-color, $st-primary-bd-color, true);
+			}
+		}
+
+		.st-danger,
+		&.st-danger { // 危险 非常重要
+			@include make-button-variant($st-danger-text-color, $st-danger-bg-color, $st-danger-bd-color, true);
+		}
+		.st-warn,
+		&.st-warn { // 警告
+			@include make-button-variant($st-warn-text-color, $st-warn-bg-color, $st-warn-bd-color, true);
+		}
+		.st-info,
+		&.st-info { // 信息
+			@include make-button-variant($st-info-text-color, $st-info-bg-color, $st-info-bd-color, true);
+		}
+		.st-done,
+		&.st-done { // 完成
+			@include make-button-variant($st-done-text-color, $st-done-bg-color, $st-done-bd-color, true);
+		}
+	}
+
+	// INPUT
+	.st-required,
+	.st-access,
+	.st-success,
+	.st-error, {
+		@include when-hover-active {
+			box-shadow: none;
+		}
+	}
+
+	.st-access { //可访问
+		@include make-border-shadow($st-access-bd-color);
+	}
+
+	.st-required { //必须
+		@include make-border-shadow($st-required-bd-color);
+	}
+
+	.st-success { //成功
+		@include make-border-shadow($st-success-bd-color);
+	}
+
+	.st-error { //失败
+		@include make-border-shadow($st-error-bd-color);
+	}
+
+/*---@STATE---*/
 }
 
-
-.state-access { //可访问
-	@include make-border-shadow($state-access-bd-color);
-}
-
-.state-required { //必须
-	@include make-border-shadow($state-required-bd-color);
-}
-
-.state-success { //成功
-	@include make-border-shadow($state-success-bd-color);
-}
-
-.state-error { //失败
-	@include make-border-shadow($state-error-bd-color);
-}

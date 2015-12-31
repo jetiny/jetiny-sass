@@ -1,5 +1,5 @@
 @if $button-on {
-
+/*---@BUTTON---*/
     .#{$jetiny-prefix}btn {
         @include make-button-default;
         @include make-form-element-disabled;
@@ -7,9 +7,5 @@
         @include make-border-width-radius($button-border-width, $button-border-radius);
         @include make-button-variant($button-default-text-color, $button-default-bg-color, $button-default-bg-color);
     }
-
-    .#{$jetiny-prefix}btn-primary {
-        @include make-button-variant($button-primary-text-color, $button-primary-bg-color, $button-primary-bd-color);
-    }
-    
+/*---@BUTTON---*/
 }

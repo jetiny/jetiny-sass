@@ -1,12 +1,8 @@
 $input-on: false !default;
 
 $input-border-radius: 0 !default; // .2em !default;
-$input-border-width: 0.1em !default; // .1em !default;
+$input-border-width: .1em !default; // .1em !default;
 
 $input-default-text-color: #000 !default;
 $input-default-bg-color: #FFF !default;
 $input-default-bd-color: #C6C6C6 !default;
-
-$input-hover-bd-color: #26A69A !default;
-$input-error-bd-color: #FF0000 !default;
-$input-success-bd-color: #4CAE4C !default;

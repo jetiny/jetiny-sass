@@ -6,7 +6,7 @@
 }
 
 // flat样式
-@mixin make-input-flat-variant($color, $bg-color, $bd-color) {
+@mixin make-input-variant($color, $bg-color, $bd-color) {
 	@include make-color-variant($color, $bg-color, $bd-color); //默认颜色
 	@include when-hover-active { //活动颜色
 		@include make-color-variant(

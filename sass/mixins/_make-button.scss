@@ -9,19 +9,38 @@
 	white-space: nowrap;			// 文本不进行换行
 	border: 1px solid transparent;  // 去除 Button的默认边框样式 + 去除 Border宽度
 	@include user-select(none);
+	outline: none;
 }
 
 // flat样式
-@mixin make-button-variant($color, $bg-color, $bd-color) {
+@mixin make-button-variant($color, $bg-color, $bd-color, $invert: false) {
+	@if $invert {
+		$cl : $bg-color;
+		$bg-color : $color;
+		$color : $cl;
+	}
 	@include make-color-variant($color, $bg-color, $bd-color); //默认颜色
 	@include when-hover-active { //活动颜色
-		@include make-color-variant(
-			$color, 
-			if($bg-color, darken($bg-color, 10%) , $bg-color), 
-			if($bd-color, darken($bd-color, 10%) , $bd-color)
-		);
+		@if $invert {
+			@include make-color-variant(
+				$bg-color, 
+				$color, 
+				if($bd-color, darken($bd-color, 10%) , $bd-color)
+			);
+		}
+		@else {		
+			@include make-color-variant(
+				$color, 
+				if($bg-color, darken($bg-color, 10%) , $bg-color), 
+				if($bd-color, darken($bd-color, 10%) , $bd-color)
+			);
+		}
 	};
 	@include when-form-element-disabled { //禁用颜色
-		@include make-color-variant($color, $bg-color, transparent);
+		@include make-color-variant(
+			$color, 
+			if($bg-color, darken($bg-color, 5%) , $bg-color),
+			if($bd-color, darken($bd-color, 10%) , $bd-color)
+		);
 	};
 }
