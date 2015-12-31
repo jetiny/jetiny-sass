@@ -5,6 +5,11 @@ $st-success-bd-color: #4CAE4C !default;
 $st-error-bd-color: #FF0000 !default;
 
 $st-text-color-white : #FFF !default;
+$st-text-color-black : #000 !default;
+
+$st-default-text-color 		:  $st-text-color-black 	!default;
+$st-default-bg-color 		:  lighten($st-text-color-black, 90) 	!default;
+$st-default-bd-color 		:  lighten($st-text-color-black, 60)	!default;
 
 $st-primary-text-color 		:  $st-text-color-white 	!default;
 $st-primary-bg-color 		:  color('blue', 'd3') 	!default;
@@ -32,6 +37,9 @@ $state-on: false !default;
 /*---@STATE---*/
 
 	// BUTTON
+	.st-default { // 一般
+		@include make-button-variant($st-default-text-color, $st-default-bg-color, $st-default-bd-color);
+	}
 	.st-primary { // 重要
 		@include make-button-variant($st-primary-text-color, $st-primary-bg-color, $st-primary-bd-color);
 	}
@@ -48,10 +56,19 @@ $state-on: false !default;
 		@include make-button-variant($st-done-text-color, $st-done-bg-color, $st-done-bd-color);
 	}
 
-	.st-invert {
+	.st-white {
+
+		 .st-default,
+		&.st-default { // 重要
+			@at-root .st-default-white,
+			&, {
+				@include make-button-variant($st-text-color-black, $st-text-color-white, $st-default-bd-color);
+			}
+		}
+
 		 .st-primary,
 		&.st-primary { // 重要
-			@at-root .st-primary-invert,
+			@at-root .st-primary-white,
 			&, {
 				@include make-button-variant($st-primary-text-color, $st-primary-bg-color, $st-primary-bd-color, true);
 			}
@@ -59,19 +76,34 @@ $state-on: false !default;
 
 		.st-danger,
 		&.st-danger { // 危险 非常重要
-			@include make-button-variant($st-danger-text-color, $st-danger-bg-color, $st-danger-bd-color, true);
+			@at-root .st-danger-white,
+			&, {
+				@include make-button-variant($st-danger-text-color, $st-danger-bg-color, $st-danger-bd-color, true);
+			}
 		}
+
 		.st-warn,
 		&.st-warn { // 警告
-			@include make-button-variant($st-warn-text-color, $st-warn-bg-color, $st-warn-bd-color, true);
+			@at-root .st-warn-white,
+			&, {
+				@include make-button-variant($st-warn-text-color, $st-warn-bg-color, $st-warn-bd-color, true);
+			}
 		}
+
 		.st-info,
 		&.st-info { // 信息
-			@include make-button-variant($st-info-text-color, $st-info-bg-color, $st-info-bd-color, true);
+			@at-root .st-info-white,
+			&, {
+				@include make-button-variant($st-info-text-color, $st-info-bg-color, $st-info-bd-color, true);
+			}
 		}
+
 		.st-done,
 		&.st-done { // 完成
-			@include make-button-variant($st-done-text-color, $st-done-bg-color, $st-done-bd-color, true);
+			@at-root .st-done-white,
+			&, {
+				@include make-button-variant($st-done-text-color, $st-done-bg-color, $st-done-bd-color, true);
+			}
 		}
 	}
 
