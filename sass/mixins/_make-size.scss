@@ -11,7 +11,11 @@ $line-height-default: 1.2 !default;
 	@include make-line-height-default;
 }
 
-
 @mixin make-border-width-radius($bd-width, $bd-radius) {
-	
+    @if $bd-width {
+        border-width: $bd-width;
+    }
+    @if $bd-radius {
+        border-radius: $bd-radius;
+    }
 }
