@@ -1,0 +1,34 @@
+
+$icon-on: false !default;
+
+$icon-fontawesome-on: $icon-on !default;
+$icon-fontawesome-class:    'fa';
+$icon-fontawesome-family:   'FontAwesome';
+$icon-fontawesome-path: 	'../fonts';
+$icon-fontawesome-file:     'fontawesome-webfont';
+$icon-fontawesome-version:  '4.3.0';
+
+$icon-icomoon-on: $icon-on !default;
+$icon-icomoon-class:    'icon';
+$icon-icomoon-family:   'Icomoon';
+$icon-icomoon-path: 	'../fonts';
+$icon-icomoon-file:     'icomoon';
+$icon-icomoon-version:  '2015.06.28';
+
+@if $icon-on {
+	@if $icon-fontawesome-on {
+		@include make-icon-font-face($icon-fontawesome-family, $icon-fontawesome-path, $icon-fontawesome-file, $icon-fontawesome-version);
+		@include make-icon-class-prefix($icon-fontawesome-class, $icon-fontawesome-family);
+		
+		$fa-css-prefix: $icon-fontawesome-class;
+		@import "icon-fontawesome";
+	}
+
+	@if $icon-icomoon-on {
+		@include make-icon-font-face($icon-icomoon-family, $icon-icomoon-path, $icon-icomoon-file, $icon-icomoon-version);	
+		@include make-icon-class-prefix($icon-icomoon-class, $icon-icomoon-family);
+
+		$icomoon-css-prefix: $icon-icomoon-class;
+		@import "icon-icomoon";
+	}
+}

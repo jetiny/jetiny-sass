@@ -1,0 +1,7 @@
+@if $label-on {
+/*---@BUTTON---*/
+    .#{$jetiny-prefix}label {
+        @include make-label-default;
+    }
+/*---@BUTTON---*/
+}

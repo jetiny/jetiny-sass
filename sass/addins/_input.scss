@@ -7,5 +7,6 @@
 		@include make-input-variant($input-default-text-color, $input-default-bg-color, $input-default-bd-color);
 		@include make-form-element-disabled;
 	}
+	@include group-append-selector('&>.#{$jetiny-prefix}input');
 /*---!INPUT---*/
 }

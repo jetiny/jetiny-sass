@@ -1,0 +1,13 @@
+
+@mixin make-ani-flip($horiz, $vert) {
+	@include transform( scale($horiz, $vert));
+}
+
+
+@mixin make-ani-rotate($degrees) {
+	@include transform( rotate($degrees) );
+}
+
+@mixin make-ani-duration($duration: .4s) {
+	@include transition-duration ($duration);
+}

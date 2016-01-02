@@ -1,0 +1,60 @@
+// 翻转
+.ani-fh {
+	@include make-ani-flip(-1, 1);
+	@include make-ani-duration;
+}
+
+.ani-fv {
+	@include make-ani-flip(1, -1);
+	@include make-ani-duration;
+}
+
+//旋转
+.ani-r0 { 
+	@include make-ani-rotate(0deg);  
+	@include make-ani-duration;
+}
+.ani-r1 { 
+	@include make-ani-rotate(90deg);  
+	@include make-ani-duration;
+}
+.ani-r2 { 
+	@include make-ani-rotate(180deg); 
+	@include make-ani-duration;
+}
+.ani-r3 { 
+	@include make-ani-rotate(270deg); 
+	@include make-ani-duration;
+}
+
+//平滑转圈
+.ani-spin {
+    @include animation(spin-keyframe 2s infinite linear);
+}
+
+//步进转圈
+.ani-pulse {
+    @include animation(spin-keyframe 1s infinite steps(8));
+}
+
+@-webkit-keyframes spin-keyframe {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes spin-keyframe {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}

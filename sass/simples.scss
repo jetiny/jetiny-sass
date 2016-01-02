@@ -21,3 +21,76 @@
 		}
 	}
 }
+
+.arrow {
+	position: relative;
+	&:after {
+		@include make-icon-arrow(12px, red);
+	}
+}
+
+.tbtn-group {
+	> .tbtn {
+		float: left;
+		border-right-width: 0;
+	}
+	> .tbtn:last-child {
+		border-right-width: 1px;
+	}
+}
+
+.panel {
+	position: relative;
+	border: 0;
+
+	.pn-title,		//标题
+	.pn-status,		//状态文字
+	.pn-tools,		//工具按钮
+	.pn-actions,	//操作按钮
+	{
+		display: inline-block;
+	}
+
+	.pn-title {
+		font-weight: bold;
+		vertical-align: middle;
+		>:first-child {
+			margin-left: 0;
+		}
+		>.pn-status {
+			vertical-align: baseline;
+		}
+	}
+
+	.pn-status {
+		font-weight: normal;
+		vertical-align: middle;
+		margin: auto 10px;
+	}
+
+	> header,
+	> footer {
+		position: relative;
+		border: 1px solid #C2C2C2;
+		@include clearfix;
+		@include make-size-default;
+		> :first-child {
+			margin-left: 10px;
+		}
+	}
+
+	> header {
+		box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);
+		+.pn-body {
+			border-top: none;
+		}
+	}
+	> .pn-body {
+		border: 1px solid #C2C2C2;
+		padding: .5em 1em;
+		+ footer {
+			border-top: none;
+		}
+	}
+}
+

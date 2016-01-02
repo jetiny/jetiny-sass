@@ -1,14 +1,17 @@
 @if $button-on {
 /*---@BUTTON---*/
-    .#{$jetiny-prefix}btn {
+    .tbtn {
         @include make-button-default;
         @include make-form-element-disabled;
         @include make-size-default;
         @include make-border-width-radius($button-border-width, $button-border-radius);
         @include make-button-variant($button-default-text-color, $button-default-bg-color, $button-default-bg-color);
         
-        @include make-button-tick;
-        @include make-button-inner-shadow;
+        // @include make-button-tick;
+        // @include make-button-inner-shadow;
+        // @include make-button-scale;
     }
+
+    @include group-append-selector('&>.tbtn');
 /*---@BUTTON---*/
 }
