@@ -21,7 +21,7 @@
 		$color : $cl;
 	}
 	@include make-color-variant($color, $bg-color, $bd-color); //默认颜色
-	@include when-hover-focus { //活动颜色
+	@include when-hover-focus {
 		@if $invert {
 			@include make-color-variant(
 				$bg-color, 
@@ -33,6 +33,22 @@
 			@include make-color-variant(
 				$color, 
 				if($bg-color, darken($bg-color, 10%) , $bg-color), 
+				if($bd-color, darken($bd-color, 10%) , $bd-color)
+			);
+		}
+	};
+	@include when-active {
+		@if $invert {
+			@include make-color-variant(
+				$bg-color, 
+				if($color, darken($color, 15%) , $color), 
+				if($bd-color, darken($bd-color, 10%) , $bd-color)
+			);
+		}
+		@else {		
+			@include make-color-variant(
+				$color, 
+				if($bg-color, darken($bg-color, 15%) , $bg-color), 
 				if($bd-color, darken($bd-color, 10%) , $bd-color)
 			);
 		}

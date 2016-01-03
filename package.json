@@ -27,6 +27,7 @@
   "homepage": "https://github.com/jetiny/jetiny-sass#readme",
   "devDependencies": {
     "bourbon": "^4.2.6",
+    "gulp-copy": "0.0.2",
     "gulp-log": "0.0.0",
     "gulp-param": "^0.6.4",
     "gulp-sass": "^2.1.1",

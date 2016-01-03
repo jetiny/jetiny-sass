@@ -28,7 +28,7 @@
 }
 
 @mixin when-active() {
-	&:active:not([disabled]){
+	&:active{
 		@content;
 	}
 }

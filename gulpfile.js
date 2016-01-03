@@ -1,6 +1,6 @@
 var gulp = require('gulp-param')(require('gulp'), process.argv),
     path = require('path'),
-    // gulpCopy = require('gulp-copy'),
+    gulpCopy = require('gulp-copy'),
     // gulpFilter = require('gulp-filter'),
     // uglify = require('gulp-uglify'),
     gulpLog = require('gulp-log'),
@@ -36,4 +36,12 @@ gulp.task('sass-watch', function () {
     gulp.watch([
         './sass/**/*.scss',
     ], ['sass']);
+});
+
+//复制字体
+gulp.task('assets', function () {
+    return gulp.src('./fonts/*.*')
+        .pipe(gulpCopy('./dist'))
+        .pipe(gulpLog())
+        ;
 });

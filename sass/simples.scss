@@ -54,6 +54,8 @@
 	.pn-title {
 		font-weight: bold;
 		vertical-align: middle;
+		display: table-cell;
+		@include make-size-default;
 		>:first-child {
 			margin-left: 0;
 		}
@@ -62,20 +64,35 @@
 		}
 	}
 
+	.pn-tools {
+		vertical-align: middle;
+		display: table-cell;
+		@include make-size-default;
+	}
+
 	.pn-status {
 		font-weight: normal;
 		vertical-align: middle;
 		margin: auto 10px;
 	}
 
+
 	> header,
 	> footer {
+		box-sizing: border-box;
+		display: table;
+		width: 100%;
 		position: relative;
 		border: 1px solid #C2C2C2;
 		@include clearfix;
-		@include make-size-default;
+		// @include make-size-default;
 		> :first-child {
 			margin-left: 10px;
+		}
+		
+		>.pn-status {
+			vertical-align: middle;
+			display: table-cell;
 		}
 	}
 

@@ -1,0 +1,66 @@
+
+$flat-text-color-white : #FFF !default;
+$flat-text-color-black : #000 !default;
+
+$flat-default-text-color 		:  $flat-text-color-black 	!default;
+$flat-default-bg-color 		:  lighten($flat-text-color-black, 90) 	!default;
+$flat-default-bd-color 		:  lighten($flat-text-color-black, 60)	!default;
+
+$flat-primary-text-color 		:  $flat-text-color-white 	!default;
+$flat-primary-bg-color 		:  color('blue', 'd1') 	!default;
+$flat-primary-bd-color 		:  color('blue', 'd2')	!default;
+
+$flat-danger-text-color 		:  $flat-text-color-white 	!default;
+$flat-danger-bg-color 			:  color('red', 'd1') 	!default;
+$flat-danger-bd-color 			:  color('red', 'd3') 	!default;
+
+$flat-warn-text-color 		:  $flat-text-color-white 	!default;
+$flat-warn-bg-color 			:  color('amber', 'd3') 	!default;
+$flat-warn-bd-color 			:  color('amber', 'd4') 	!default;
+
+$flat-info-text-color 		:  $flat-text-color-white 	!default;
+$flat-info-bg-color 			:  #4198D2 	!default;
+$flat-info-bd-color 			:  color('blue', 'd2') 	!default;
+
+$flat-done-text-color 		:  $flat-text-color-white 	!default;
+$flat-done-bg-color 			:  color('green', 'd1') 	!default;
+$flat-done-bd-color 			:  color('green', 'd2') 	!default;
+
+@mixin make-button-flat() {
+	&.flat-default { // 一般
+		@include make-button-variant($flat-default-text-color, $flat-default-bg-color, $flat-default-bd-color);
+	}
+	&.flat-default-lite { // 一般
+		@include make-button-variant($flat-text-color-black, $flat-text-color-white, $flat-default-bd-color);
+	}
+	&.flat-primary { // 重要
+		@include make-button-variant($flat-primary-text-color, $flat-primary-bg-color, $flat-primary-bd-color);
+	}
+	&.flat-primary-lite { // 重要
+		@include make-button-variant($flat-primary-text-color, $flat-primary-bg-color, $flat-primary-bd-color, true);
+	}
+	&.flat-danger { // 危险 非常重要
+		@include make-button-variant($flat-danger-text-color, $flat-danger-bg-color, $flat-danger-bd-color);
+	}
+	&.flat-danger-lite { // 危险 非常重要
+		@include make-button-variant($flat-danger-text-color, $flat-danger-bg-color, $flat-danger-bd-color, true);
+	}
+	&.flat-warn { // 警告
+		@include make-button-variant($flat-warn-text-color, $flat-warn-bg-color, $flat-warn-bd-color);
+	}
+	&.flat-warn-lite { // 警告
+		@include make-button-variant($flat-warn-text-color, $flat-warn-bg-color, $flat-warn-bd-color, true);
+	}
+	&.flat-info { // 信息
+		@include make-button-variant($flat-info-text-color, $flat-info-bg-color, $flat-info-bd-color);
+	}
+	&.flat-info-lite { // 信息
+		@include make-button-variant($flat-info-text-color, $flat-info-bg-color, $flat-info-bd-color, true);
+	}
+	&.flat-done { // 完成
+		@include make-button-variant($flat-done-text-color, $flat-done-bg-color, $flat-done-bd-color);
+	}
+	&.flat-done-lite { // 完成
+		@include make-button-variant($flat-done-text-color, $flat-done-bg-color, $flat-done-bd-color, true);
+	}	
+}

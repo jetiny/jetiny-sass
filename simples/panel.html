@@ -21,12 +21,15 @@ footer 可能没有，可以有状态显示和按钮组
 <div class="panel">
 	<header>
 		<div class="pn-title"><i class="pn-status fa-envelope-o"></i>Title<span class="pn-status">subtitle</span>	</div>
-		<div class="pn-tools group ss float-right ">
+		<span class="pn-status">subtitle</span>
+		<div class="pn-tools float-right ">
 			<span class="pn-status">状态显示文字</span>
-			<button class="tbtn st-warn">st-warn</button>
-			<button class="tbtn st-info-lite">st-info</button>
-			<button class="tbtn st-done">st-done</button>
-			<button class="tbtn st-default-lite">&times;</button>
+			<div class="group inline ss">
+				<button class="tbtn st-default-lite"><i class="ticon-square icon-minus"></i></button>
+				<button class="tbtn st-default-lite"><i class="ticon-square icon-plus"></i></button>
+				<button class="tbtn st-default-lite"><i class="ticon-square icon-enlarge2"></i></button>
+				<button class="tbtn st-default-lite"><i class="ticon-square icon-cross"></i></button>
+			</div>
 		</div>
 	</header>
 	<div class="pn-body">内容区</div>

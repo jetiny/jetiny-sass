@@ -19,7 +19,7 @@ $icon-icomoon-version:  '2015.06.28';
 	@if $icon-fontawesome-on {
 		@include make-icon-font-face($icon-fontawesome-family, $icon-fontawesome-path, $icon-fontawesome-file, $icon-fontawesome-version);
 		@include make-icon-class-prefix($icon-fontawesome-class, $icon-fontawesome-family);
-		
+
 		$fa-css-prefix: $icon-fontawesome-class;
 		@import "icon-fontawesome";
 	}
@@ -31,4 +31,34 @@ $icon-icomoon-version:  '2015.06.28';
 		$icomoon-css-prefix: $icon-icomoon-class;
 		@import "icon-icomoon";
 	}
+
+	.tbtn-icon {
+		@include make-button-default;
+		@include make-font-size-sm;
+		@include make-pad-sm;
+	}
+
+	.ticon-square {
+		@include make-square-default;
+	}
+
+	.font-sm,
+	.group.ss,
+	.group.sd,
+	.group.sl,
+	{
+		.ticon-square {
+			@include make-square-sm;
+		}
+	}
+	.font-lg,
+	.group.ls,
+	.group.ld,
+	.group.ll,
+	{
+		.ticon-square {
+			@include make-square-lg;
+		}
+	}
+
 }

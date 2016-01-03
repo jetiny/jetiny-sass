@@ -1,6 +1,12 @@
+$prefix-for-webkit:    false !default;
+$prefix-for-mozilla:   false !default;
+$prefix-for-microsoft: false !default;
+$prefix-for-opera:     false !default;
+$prefix-for-spec:      true !default;
+
 @import "bourbon";
 
-@import "normalize/import-now";
+// @import "normalize/import-now";
 
 $font-on: true !default;
 $pad-on: true !default;
@@ -8,6 +14,7 @@ $group-on: true !default;
 $color-on: true !default;
 $state-on: true !default;
 $label-on: true !default;
+$ani-on: true !default;
 $icon-on: true !default;
 
 $input-on: true !default;

@@ -72,15 +72,56 @@ $group-item-selector : '>li, >.item' !default;
 
 	&.inline {
 		display: inline-block;
+		vertical-align: middle;
 		@include clearfix;
-
 		#{$name} {
 			float: left;
 		}
 	}
 
+	&.circle {
+		#{$name} {
+			@include make-group-item-circle;
+		}
+	}
+
+	&.round {
+		#{$name} {
+			@include make-group-item-round($name);
+		}
+	}
+
 	@include make-group-item($name);
 }
+
+@mixin make-group-inline($name) {
+	display: inline-block;
+	vertical-align: middle;
+	@include clearfix;
+	#{$name} {
+		float: left;
+	}
+}
+
+@mixin make-group-item-circle() {
+	&:first-child {
+		@include border-left-radius(50%);
+	}
+	&:last-child {
+		@include border-right-radius(50%);
+	}
+}
+
+@mixin make-group-item-round($name) {
+	&:first-child {
+		@include border-left-radius(20%);
+	}
+	&:last-child {
+		@include border-right-radius(20%);
+	}
+}
+
+
 
 $group-item-selectors : $group-item-selector;
 

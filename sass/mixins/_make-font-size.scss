@@ -15,3 +15,18 @@ $font-size-lg: 16px !default;
 @mixin make-font-size-lg($font-size: $font-size-lg) {
     @include make-font-size-default($font-size-lg);
 }
+
+
+@mixin make-square-default($font-size: $font-size-default) {
+    font-size: $font-size;
+    width: ceil($font-size * 1.2); // 默认 line-height:1.2
+}
+
+@mixin make-square-sm($font-size: $font-size-sm) {
+    @include make-square-default($font-size-sm);
+}
+
+@mixin make-square-lg($font-size: $font-size-lg) {
+    @include make-square-default($font-size-lg);
+}
+
