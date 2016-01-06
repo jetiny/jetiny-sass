@@ -8,10 +8,11 @@ $button-flat-on : $button-on !default;
         @include make-size-default;
         @include make-border-width-radius($button-border-width, $button-border-radius);
         @include make-button-variant($button-default-text-color, $button-default-bg-color, $button-default-bg-color);
-        
-        // @include make-button-tick;
-        // @include make-button-inner-shadow;
-        // @include make-button-scale;
+        &:not([disabled]) {
+            @include make-button-tick;
+            @include make-button-inner-shadow;
+            @include make-button-scale;
+        }
     }
 
     // flat 样式
